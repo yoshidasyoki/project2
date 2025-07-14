@@ -4,8 +4,14 @@ WORKDIR /var/www/html
 
 RUN apt-get update && apt-get install -y \
     libonig-dev \
-    && docker-php-ext-install pdo_mysql mysqli mbstring \
+    unzip \
+    zip \
+    git \
+    libzip-dev \
+    && docker-php-ext-install pdo_mysql mysqli zip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+COPY --from=composer:2.7 /usr/bin/composer /usr/bin/composer
 
 EXPOSE 80
