@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./src:/var/www/html
-      - ./docker/mysql/db-variables.env:/var/www/html/.env
+      - ./docker/mysql/db-variables.env:/var/www/html/src/.env
     ports:
       - "8080:80"
     depends_on:
