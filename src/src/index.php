@@ -11,7 +11,7 @@ $pass = $_ENV['MYSQL_PASSWORD'];
 $database = $_ENV['MYSQL_DATABASE'];
 
 $mysqli = new mysqli($hostname, $user, $pass, $database);
-if($mysqli->connect_error) {
+if ($mysqli->connect_error) {
     echo '接続失敗' . PHP_EOL;
     exit();
 } else {
